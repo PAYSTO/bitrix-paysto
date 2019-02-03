@@ -28,11 +28,11 @@ class paysto_payment extends CModule {	// Required vars
 
 		$this->MODULE_VERSION = $arModuleVersion['VERSION'];
 		$this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
-		$this->MODULE_NAME = GetMessage('PAYANYWAY.PAYMENT_INSTALL_NAME');
+		$this->MODULE_NAME = GetMessage('PAYSTO.PAYMENT_INSTALL_NAME');
 		if (CModule::IncludeModule($this->MODULE_ID)) {
-			$this->MODULE_DESCRIPTION = GetMessage('PAYANYWAY.PAYMENT_INSTALL_DESCRIPTION');
+			$this->MODULE_DESCRIPTION = GetMessage('PAYSTO.PAYMENT_INSTALL_DESCRIPTION');
 		} else {
-			$this->MODULE_DESCRIPTION = GetMessage('PAYANYWAY.PAYMENT_PREINSTALL_DESCRIPTION');
+			$this->MODULE_DESCRIPTION = GetMessage('PAYSTO.PAYMENT_PREINSTALL_DESCRIPTION');
 		}
 		$this->aPaths = array(
 			'bitrix' => '/bitrix',
@@ -53,7 +53,7 @@ class paysto_payment extends CModule {	// Required vars
 
 		$GLOBALS['errors'] = $this->errors;
 		$APPLICATION->IncludeAdminFile(
-			GetMessage('PAYANYWAY.PAYMENT_INSTALL_TITLE'), 
+			GetMessage('PAYSTO.PAYMENT_INSTALL_TITLE'),
 			$_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/paysto.payment/install/step_ok.php'
 			);
 	}
@@ -67,7 +67,7 @@ class paysto_payment extends CModule {	// Required vars
 		} 
 		else {
 			$APPLICATION->IncludeAdminFile(
-				GetMessage('PAYANYWAY.PAYMENT_INSTALL_TITLE'), 
+				GetMessage('PAYSTO.PAYMENT_INSTALL_TITLE'),
 				$_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/paysto.payment/install/unstep_ok.php'
 				);
 		}
@@ -82,7 +82,7 @@ class paysto_payment extends CModule {	// Required vars
 		$path_to = $_SERVER['DOCUMENT_ROOT'];
 		foreach ($this->aPaths as $name_from => $name_to) {
 			if (!CopyDirFiles($path_from . $this->aPaths[$name_from], $path_to . $this->aPaths[$name_from], true, true, false, '.svn')) {
-				$this->errors = array(GetMessage('PAYANYWAY.PAYMENT_INSTALL_ERROR'));
+				$this->errors = array(GetMessage('PAYSTO.PAYMENT_INSTALL_ERROR'));
 			}
 		}
 
@@ -91,7 +91,7 @@ class paysto_payment extends CModule {	// Required vars
 		$path_to = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/admin/reports';
 		foreach ($this->aPaths as $name_from => $name_to) {
 			if (!CopyDirFiles($path_from . $this->aPaths[$name_from], $path_to . $this->aPaths[$name_from], true, true, false, '.svn')) {
-				// $this->errors = array(GetMessage('PAYANYWAY.PAYMENT_INSTALL_ERROR'));
+				// $this->errors = array(GetMessage('PAYSTO.PAYMENT_INSTALL_ERROR'));
 			}
 		}
 
