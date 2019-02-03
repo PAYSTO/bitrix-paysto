@@ -80,13 +80,5 @@ $MESS['PAYSTO.SALE_HELP_TEXT'] = '
 <p>
 <div>1. Go to �Partner update� section (Settings�>Marketplace�>Partner update).</div>
 <div>2. Go to �Updates� tab. Select all updates for �PaySto payment system�, if any available. Click �Install updates�. When the updates installation is finished, �Successfully installed updates: (number)� will be displayed.</div>
-</p>
-<b>Additionally</b>
-<p>
-<div>All injections of the PaySto plugin code made into 1C-Bitrix files are marked with special comments:</<div>
-<div>1. Start of the code added: �PayStoPlugin add�.</<div>
-<div>2. End of the code added: �/PayStoPlugin add�.</div>
-<div>3. Start of the code changed: �PayStoPlugin change�.</div>
-<div>4. End of the code changed: �/PayStoPlugin change�.</div>
 </p>';
 ?>

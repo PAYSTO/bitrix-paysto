@@ -50,7 +50,8 @@ if (in_array($arOrder['STATUS_ID'], $statuses_paid)) {
     $x_currency_code = ($x_currency_code == 'RUR') ? 'RUB' : $x_currency_code;
     $x_fp_timestamp = time();
     $x_fp_hash = get_x_fp_hash($x_login, $x_fp_sequence, $x_fp_timestamp, $x_amount, $x_currency_code, $secret);
-    $x_relay_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/personal/order/detail/';
+    $x_relay_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/paysto/paysto_notification.php';
+//    $x_relay_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/personal/order/detail/';
 
     // get customer's email
     $x_email = '';
