@@ -38,7 +38,7 @@ $arPSCorrespondence = array(
 		'NAME' => GetMessage('SALE_PAYSTO_SECRET'),
 		'DESCR' => GetMessage('SALE_PAYSTO_SECRET_DESC'),
 		'VALUE' => '',
-		'TYPE' => 'PASSWORD',
+		'TYPE' => 'TEXT',
 		'GROUP' => GetMessage('SALE_PAYSTO_G_MAIN'),
 		'DEFAULT' => '',
 		'SORT' => '2',
@@ -47,7 +47,7 @@ $arPSCorrespondence = array(
         'NAME' => GetMessage('SALE_PAYSTO_DESC'),
         'DESCR' => GetMessage('SALE_PAYSTO_DESC_DESC'),
         'VALUE' => '',
-        'TYPE' => 'PASSWORD',
+        'TYPE' => '',
         'GROUP' => GetMessage('SALE_PAYSTO_G_MAIN'),
         'DEFAULT' => '',
         'SORT' => '3',
@@ -87,5 +87,15 @@ $arPSCorrespondence = array(
 		'GROUP' => GetMessage('SALE_PAYSTO_G_SEND'),
 		'DEFAULT' => '1',
 		'SORT' => '8',
-	)
+	),
+    'SERVER_LIST' => array(
+        'NAME' => GetMessage('SALE_PAYSTO_SERVER_LIST'),
+        'DESCR' => GetMessage('SALE_PAYSTO_SERVER_LIST_DESC'),
+        'VALUE' => '',
+        'TYPE' => '',
+        'GROUP' => GetMessage('SALE_PAYSTO_G_SEND'),
+        'DEFAULT' => '95.213.209.218,95.213.209.219,95.213.209.220,95.213.209.221,95.213.209.222',
+        'SORT' => '9',
+    ),
+    
 );

@@ -37,17 +37,27 @@ function get_x_MD5_Hash($x_login, $x_trans_id, $x_amount, $secret)
 
 /**
  * Check if IP in acceptable IPS list
+ * @param string $server_list
  * @return bool
  */
-function checkInServerList()
+function checkInServerList($server_list = '')
 {
-    $serverList = array(
-        '95.213.209.218',
-        '95.213.209.219',
-        '95.213.209.220',
-        '95.213.209.221',
-        '95.213.209.222',
-    );
+    $server_list = trim($server_list);
+    if (empty($server_list)) {
+        $serverList = array(
+            '95.213.209.218',
+            '95.213.209.219',
+            '95.213.209.220',
+            '95.213.209.221',
+            '95.213.209.222',
+        );
+    } else {
+        $serverList = array();
+        $arrList = explode(',', $server_list);
+        foreach ($arrList as $el) {
+            $serverList[] = trim($el);
+        }
+    }
     $myIP = array();
     $myIP[] = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '127.0.0.1';
     $myIP[] = isset($_SERVER['HTTP_CF_CONNECTING_IP']) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : '127.0.0.1';
@@ -106,7 +116,6 @@ while ($arPaysystem = $dbPayList->Fetch()) {
     }
 }
 
-
 if (!is_null($paysystem_id)) {
     // workflow variables
     $error = '';
@@ -120,6 +129,7 @@ if (!is_null($paysystem_id)) {
     $x_login = $paysystem_params['X_LOGIN']['VALUE'];
     $secret = $paysystem_params['SECRET']['VALUE'];
     $only_from_ips = $paysystem_params['ONLY_FROM_IPS']['VALUE'];
+    $server_list = $paysystem_params['SERVER_LIST']['VALUE'];
     $x_response_code = getRequestedVariable('x_response_code');
     $x_trans_id = getRequestedVariable('x_trans_id');
     $x_invoice_num = getRequestedVariable('x_invoice_num');
@@ -138,7 +148,7 @@ if (!is_null($paysystem_id)) {
     $is_paid = ($arOrder['PAYED'] == 'Y');
 
     // Check IP
-    if (!$is_paid && $only_from_ips && !checkInServerList()) {
+    if (!$is_paid && $only_from_ips && !checkInServerList($server_list)) {
         redirectToOrdersPage("Error: order is not paid", 'ERROR');
     } else {
         if (!$is_paid) {

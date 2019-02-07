@@ -57,8 +57,10 @@ $MESS['SALE_PAYSTO_SEND_CUSTOMER'] = 'To the customer\'s email';
 $MESS['SALE_PAYSTO_SEND_CUSTOMER_DESC'] = 'Always send';
 $MESS['SALE_PAYSTO_SEND_OTHER_EMAIL'] = 'To this email(s)';
 $MESS['SALE_PAYSTO_SEND_OTHER_EMAIL_DESC'] = 'Always send';
-$MESS['SALE_PAYSTO_MAIL_FOR_SEND'] = '�� ���� ��������� ������ (��� Email)';
-$MESS['SALE_PAYSTO_MAIL_FOR_SEND_DESC'] = '������� email �� �������� ����� ���������� ������ �� ������� �� ������.';
+$MESS['SALE_PAYSTO_ONLY_FROM_IPS'] = 'Receive callback';
+$MESS['SALE_PAYSTO_ONLY_FROM_IPS_DESC'] = 'Receive calbacks only from approved IPs for more safety';
+$MESS['SALE_PAYSTO_SERVER_LIST'] = 'Server IP list';
+$MESS['SALE_PAYSTO_SERVER_LIST_DESC'] = 'Input server list with comma separated 95.213.209.218, 95.213.209.219, 95.213.209.220, 95.213.209.221, 95.213.209.222. If you don\'t input list system stay this field empty.';
 
 // ��� ���� � ���������� ��������.
 $MESS['SASP_AS000'] = 'SUCCESSFUL AUTHORIZATION';
