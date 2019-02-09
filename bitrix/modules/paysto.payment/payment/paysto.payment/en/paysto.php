@@ -61,6 +61,7 @@ $MESS['SALE_PAYSTO_ONLY_FROM_IPS'] = 'Receive callback';
 $MESS['SALE_PAYSTO_ONLY_FROM_IPS_DESC'] = 'Receive calbacks only from approved IPs for more safety';
 $MESS['SALE_PAYSTO_SERVER_LIST'] = 'Server IP list';
 $MESS['SALE_PAYSTO_SERVER_LIST_DESC'] = 'Input server list with comma separated 95.213.209.218, 95.213.209.219, 95.213.209.220, 95.213.209.221, 95.213.209.222. If you don\'t input list system stay this field empty.';
+$MESS['SALE_PAYSTO_PAID_STATUS_DESC'] = 'Set order status after successfull payment';
 
 // ��� ���� � ���������� ��������.
 $MESS['SASP_AS000'] = 'SUCCESSFUL AUTHORIZATION';
